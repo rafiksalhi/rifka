@@ -1,1 +1,1 @@
-install-windowsfeature -name AD-Domain-Services
+install-windowsfeature -name web-server
