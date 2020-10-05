@@ -1,1 +1,1 @@
-Get-Disk |Where partitionstyle -eq ‘raw’ |Initialize-Disk -PartitionStyle MBR
+install-windowsfeature -name AD-Domain-Services
