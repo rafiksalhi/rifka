@@ -1,1 +1,4 @@
-Get-Disk | Where partitionstyle -eq ‘raw’ | Initialize-Disk -PartitionStyle MBR -PassThru | New-Partition -AssignDriveLetter -UseMaximumSize | Format-Volume -FileSystem NTFS -NewFileSystemLabel “disk2” -Confirm:$false
+$rd = Get-Disk | Where partitionstyle -eq ‘raw’
+Initialize-Disk -Number $rd.number -PartitionStyle GPT
+New-Partition -DiskNumber $rd.number -UseMaximumSize -DriveLetter z
+Format-Volume -FileSystem NTFS -NewFileSystemLabel "disk 2" -DriveLetter Z
